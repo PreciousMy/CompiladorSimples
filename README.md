@@ -61,7 +61,7 @@ WHILE (i < 3) {
     i = i + 1;
 }
 
-// IF/ELSE.
+// IF/ELSE
 media = media / 3.0;
 IF (media >= 7.0) {
     situacao = "Aprovado";
