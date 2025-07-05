@@ -53,10 +53,8 @@ STRING_LITERAL \"[^"]*\"
 "==" {yylval.fn = 4; return CMP; }
 ">=" {yylval.fn = 5; return CMP; }
 "<=" {yylval.fn = 6; return CMP; }
+"||" {return OR;}
+"&&" {return AND;}
 
 [\ \n\t]* {;}
 %%
-
-int yywrap(){
-    return 1;
-}

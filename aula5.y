@@ -227,6 +227,8 @@ double eval(Ast *a) {
         case '4': v = (eval(a->l) == eval(a->r)) ? 1 : 0; break;
         case '5': v = (eval(a->l) >= eval(a->r)) ? 1 : 0; break;
         case '6': v = (eval(a->l) <= eval(a->r)) ? 1 : 0; break;
+        case '7': v = (eval(a->l) || eval(a->r))? 1 : 0; break;
+        case '8': v = (eval(a->l) && eval(a->r))? 1 : 0; break;
 
         case '=':
             aux = srch(l1, ((Symasgn *)a)->s);
@@ -330,11 +332,14 @@ void yyerror(char *s) { fprintf(stderr, "Erro sintatico: %s\n", s); }
 %token <str>   STRING_LITERAL
 %token         FIM IF ELSE WHILE PRINT SCAN INT FLOAT STRING
 %token <fn>    CMP
+%token AND OR
 
 %right '='
+%left  OR
+%left  AND
+%left  CMP
 %left  '+' '-'
 %left  '*' '/'
-%left  CMP
 %right NEG
 
 %type <a> exp list stmt print_arg
@@ -381,6 +386,8 @@ exp: NUM { $$ = newnum($1); }
     | exp '*' exp { $$ = newast('*', $1, $3); }
     | exp '/' exp { $$ = newast('/', $1, $3); }
     | exp CMP exp { $$ = newcmp($2, $1, $3); }
+    | exp AND exp { $$ = newcmp(8, $1, $3); }
+    | exp OR exp  { $$ = newcmp(7, $1, $3); }
     | '(' exp ')' { $$ = $2; }
     | '-' exp %prec NEG { $$ = newast('M', $2, NULL); }
     ;

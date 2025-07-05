@@ -1,0 +1,62 @@
+// https://judge.beecrowd.com/pt/problems/view/1045
+
+// Beecrowd 1045 - Tipos de Triângulos
+
+float a;
+float b;
+float c;
+float temp;
+
+
+PRINT("Digite os tres lados do triangulo:");
+LER(a);
+LER(b);
+LER(c);
+
+// A precisa ser o maior
+IF (a < b) { 
+    temp = a; 
+    a = b; 
+    b = temp; 
+}
+IF (a < c) { 
+    temp = a; 
+    a = c; 
+    c = temp; 
+}
+IF (b < c) { 
+    temp = b; 
+    b = c; 
+    c = temp; 
+}
+
+
+// existência de um triângulo.
+IF (a >= (b + c)) {
+    PRINT("NAO FORMA TRIANGULO");
+} ELSE {
+    // formar um triângulo
+
+    IF ((a * a) == (b * b + c * c)) {
+        PRINT("TRIANGULO RETANGULO");
+    }
+    IF ((a * a) > (b * b + c * c)) {
+        PRINT("TRIANGULO OBTUSANGULO");
+    }
+    IF ((a * a) < (b * b + c * c)) {
+        PRINT("TRIANGULO ACUTANGULO");
+    }
+
+    // Se A é igual a B e B é igual a C, é equilátero.
+    IF (a == b && b == c) {
+        PRINT("TRIANGULO EQUILATERO");
+    }
+
+    // se (A é igual a B e B é diferente de C) OU (B é igual a C e A é diferente de B),
+    // então tem exatamente dois lados iguais, que é isósceles.
+    IF ((a == b && b <> c) || (b == c && a <> b)) {
+        PRINT("TRIANGULO ISOSCELES");
+    }
+}
+
+FIM

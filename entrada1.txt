@@ -1,4 +1,6 @@
-// 1172 - Substituição em Vetor I
+// https://judge.beecrowd.com/pt/problems/view/1172
+
+// Beecrowd 1172 - Substituição em Vetor I
 
 int x[10];
 int i;
@@ -18,7 +20,6 @@ WHILE (i < 10) {
     
     i = i + 1;
 }
-
 
 PRINT("- Vetor Modificado");
 i = 0;

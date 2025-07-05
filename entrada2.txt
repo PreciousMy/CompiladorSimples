@@ -1,4 +1,6 @@
-// 1151 - Fibonacci Fácil
+// https://judge.beecrowd.com/pt/problems/view/1151
+
+// Beecrowd 1151 - Fibonacci Fácil
 
 int tam;       
 int i;       
