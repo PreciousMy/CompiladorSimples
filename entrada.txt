@@ -1,0 +1,30 @@
+// 1172 - Substituição em Vetor I
+
+int x[10];
+int i;
+int temp;
+
+PRINT("Digite 10 numeros inteiros (um por vez):");
+
+i = 0;
+WHILE (i < 10) {
+    LER(temp);
+
+    IF (temp <= 0) {
+        x[i] = 1;
+    } ELSE {
+        x[i] = temp;
+    }
+    
+    i = i + 1;
+}
+
+
+PRINT("- Vetor Modificado");
+i = 0;
+WHILE (i < 10) {
+    PRINT(x[i]);
+    i = i + 1;
+}
+
+FIM

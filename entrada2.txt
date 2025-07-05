@@ -1,0 +1,38 @@
+// 1151 - Fibonacci Fácil
+
+int tam;       
+int i;       
+int num1;  // Penultimo numero.
+int num2;  // Ultimo numero.
+int proximo; // Numero atual
+
+PRINT("Digite a quantidade de numeros de Fibonacci:");
+LER(tam);
+
+// Dois primeiros.
+num1 = 0;
+num2 = 1;
+
+
+// Caso n=1
+IF (tam >= 1) {
+    PRINT(num1);
+}
+
+// Caso N>=2
+IF (tam >= 2) {
+    PRINT(num2);
+}
+
+i = 2;
+WHILE (i < tam) {
+    proximo = num1 + num2;
+    PRINT(proximo);
+
+    num1 = num2;
+    num2 = proximo;
+
+    i = i + 1;
+}
+
+FIM
