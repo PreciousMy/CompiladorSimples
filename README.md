@@ -31,6 +31,7 @@ WHILE (i < 10) { ... }
 **Condicional If** 
 ```txt
 IF (media >= 7.0) { ... } ELSE { ... }
+IF ((nota >= 50 && nota < 70) || (nota == 100)) { ... } ELSE { ... }
 ```
 **Leitura e Escrita** 
 ```txt
