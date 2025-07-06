@@ -430,7 +430,7 @@ exp: NUM { $$ = newnum($1); } // uma expressao pode ser um numero
 #include "lex.yy.c"
 
 int main() {
-    yyin = fopen("entrada.txt", "r");
+    yyin = fopen("entrada1.txt", "r");
     yyparse();
     fclose(yyin);
     return 0;
